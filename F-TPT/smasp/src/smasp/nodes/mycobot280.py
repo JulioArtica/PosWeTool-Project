@@ -6,6 +6,30 @@ from ros_bt_py_msgs.msg import Node as NodeMsg
 # We need these to define a Node.
 from ros_bt_py.node import Node, define_bt_node
 from ros_bt_py.node_config import NodeConfig, OptionRef
+
+### Cobot libraries
+import time
+import rospy
+from sensor_msgs.msg import JointState
+
+from pymycobot.mycobot import MyCobot
+from pymycobot import Angle, Coord, utils
+import pymycobot
+
+### Camera libraries
+import cv2
+import numpy as np
+
+mc = None
+
+### HTTP methods libraries
+import CaseInsensitiveDict
+import subprocess
+import os
+import json
+import requests
+
+
 @define_bt_node(NodeConfig(
     options={},
     inputs={},
